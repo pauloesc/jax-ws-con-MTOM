@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoints xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime" version="2.0">
+  <endpoint
+     name="HelloWebService"
+     implementation="mio.Uruguay"
+     url-pattern="/latam/uruguay"/>
+     
+     <endpoint
+     name="holanda"
+     implementation="mio.Brasil"
+     url-pattern="/latam/brasil"/>  
+     
+     <endpoint
+     name="tercerHola"
+     implementation="net.codejava.Francia"
+     url-pattern="/europa/francia"/>   
+     
+</endpoints>
