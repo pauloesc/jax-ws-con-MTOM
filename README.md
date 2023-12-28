@@ -6,3 +6,5 @@ Quien quiera experimentar con el programa tiene que saber que tiene hardcodeado 
 AAdemas tambien combiene ejecutar el script generarEstructuraDeCarpetas.sh para generar la estructura de directorios y archivos necesarios.
 
 Se uso openjdk-8 y el codigo se compilo bajo el estandar 8 del lenguaje java.
+
+Para probar si los servicios se levantaron entrar a http://localhost:8080/servidor/img
