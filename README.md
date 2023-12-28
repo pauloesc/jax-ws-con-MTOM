@@ -4,3 +4,5 @@ Desarrollé este proyecto con el objetivo de aprender a exponer  web-services de
 
 Quien quiera experimentar con el programa tiene que saber que tiene hardcodeado las lineas dde donde se van a extrar los archivos: /home/paulo/....
 AAdemas tambien combiene ejecutar el script generarEstructuraDeCarpetas.sh para generar la estructura de directorios y archivos necesarios.
+
+Se uso openjdk-8 y el codigo se compilo bajo el estandar 8 del lenguaje java.
