@@ -12,6 +12,8 @@ import javax.jws.WebService;
 import javax.xml.ws.WebServiceException;
 import javax.xml.ws.soap.MTOM;
 
+import erroresPersonalizados.ErrorCargaArchivo;
+
 @WebService
 /*
  * threshold: especifica el tamaño (en bytes) por encima del cual los datos binarios se
@@ -53,7 +55,8 @@ public class ImgFuncionalidades {
 	}
 	
 	@WebMethod
-    public byte[] descargarImg(String fileName) {
+	public byte[] descargarImg(String fileName) throws ErrorCargaArchivo {
+
 		String filePath = "/home/paulo/imgProyectoPrueba/jax_ws/" + fileName;
 		         
         try {
