@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <endpoints xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime" version="2.0">
   <endpoint
-     name="HelloWebService"
+     name="pasi_sudamericano_1"
      implementation="mio.Uruguay"
      url-pattern="/latam/uruguay"/>
      
      <endpoint
-     name="holanda"
+     name="pasi_sudamericano_2"
      implementation="mio.Brasil"
      url-pattern="/latam/brasil"/>  
      
      <endpoint
-     name="tercerHola"
+     name="pais_europea_1"
      implementation="net.codejava.Francia"
      url-pattern="/europa/francia"/>   
+     
+     <endpoint
+     name="servicio_de_imgs"
+     implementation="imagenes.ImgFuncionalidades"
+     url-pattern="/img"/>
      
 </endpoints>

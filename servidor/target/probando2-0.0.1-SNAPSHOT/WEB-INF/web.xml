@@ -26,6 +26,11 @@
     <url-pattern>/europa/*</url-pattern>
   </servlet-mapping>
   
+    <servlet-mapping>
+    <servlet-name>JAXWSServlet</servlet-name>
+    <url-pattern>/img</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
 
 
