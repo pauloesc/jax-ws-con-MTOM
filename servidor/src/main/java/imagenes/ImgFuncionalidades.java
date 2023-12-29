@@ -86,8 +86,14 @@ public class ImgFuncionalidades {
             return fileBytes;
             
         } catch (IOException ex) {
-            System.err.println(ex);
-            throw new WebServiceException(ex);
+            System.out.println(ex.getMessage());
+            
+            /*
+             * podria retornar el siguiente error pero prefiero hacer uno propio
+             * throw new WebServiceException(ex);
+             */
+            
+            throw new ErrorCargaArchivo();
         }
 		
 		

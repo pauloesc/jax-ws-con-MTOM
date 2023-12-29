@@ -7,6 +7,7 @@ import javax.jws.WebResult;
 import javax.jws.WebService;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.ws.Action;
+import javax.xml.ws.FaultAction;
 import javax.xml.ws.RequestWrapper;
 import javax.xml.ws.ResponseWrapper;
 
@@ -26,6 +27,26 @@ public interface ImgFuncionalidades {
 
     /**
      * 
+     * @param arg0
+     * @return
+     *     returns byte[]
+     * @throws ErrorCargaArchivo_Exception
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "descargarImg", targetNamespace = "http://imagenes/", className = "ws_cliente_imagenes.DescargarImg")
+    @ResponseWrapper(localName = "descargarImgResponse", targetNamespace = "http://imagenes/", className = "ws_cliente_imagenes.DescargarImgResponse")
+    @Action(input = "http://imagenes/ImgFuncionalidades/descargarImgRequest", output = "http://imagenes/ImgFuncionalidades/descargarImgResponse", fault = {
+        @FaultAction(className = ErrorCargaArchivo_Exception.class, value = "http://imagenes/ImgFuncionalidades/descargarImg/Fault/ErrorCargaArchivo")
+    })
+    public byte[] descargarImg(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0)
+        throws ErrorCargaArchivo_Exception
+    ;
+
+    /**
+     * 
      * @param arg1
      * @param arg0
      */
@@ -38,20 +59,5 @@ public interface ImgFuncionalidades {
         String arg0,
         @WebParam(name = "arg1", targetNamespace = "")
         byte[] arg1);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns byte[]
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "descargarImg", targetNamespace = "http://imagenes/", className = "ws_cliente_imagenes.DescargarImg")
-    @ResponseWrapper(localName = "descargarImgResponse", targetNamespace = "http://imagenes/", className = "ws_cliente_imagenes.DescargarImgResponse")
-    @Action(input = "http://imagenes/ImgFuncionalidades/descargarImgRequest", output = "http://imagenes/ImgFuncionalidades/descargarImgResponse")
-    public byte[] descargarImg(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
 
 }

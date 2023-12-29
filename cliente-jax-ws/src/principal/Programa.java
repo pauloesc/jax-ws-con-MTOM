@@ -12,6 +12,7 @@ import javax.xml.ws.soap.MTOMFeature;
 
 import latam.Brasil;
 import latam.BrasilService;
+import ws_cliente_imagenes.ErrorCargaArchivo_Exception;
 import ws_cliente_imagenes.ImgFuncionalidades;
 import ws_cliente_imagenes.ImgFuncionalidadesService;
 
@@ -75,7 +76,12 @@ public class Programa {
         // downloads another file
         fileName = "deRegreso.extension";
         filePath = "/home/paulo/imgProyectoPrueba/app_desde_servidor/" + fileName;
-        byte[] fileBytes = conexion_img_fun.descargarImg("primera.png");
+        byte[] fileBytes = null;
+		try {
+			fileBytes = conexion_img_fun.descargarImg("primera.png");
+		} catch (ErrorCargaArchivo_Exception e) {
+			e.printStackTrace();
+		}
          
         try {
             FileOutputStream fos = new FileOutputStream(filePath);
@@ -87,6 +93,17 @@ public class Programa {
             System.err.println(ex);
         }
         
+        
+        System.out.println("Generando un error");
+        try {
+			fileBytes = conexion_img_fun.descargarImg("no_existe");
+		} catch (ErrorCargaArchivo_Exception e) {
+			System.out.println(e.getMessage());
+			System.out.println("-------");
+			e.printStackTrace();
+			System.out.println("-------");
+			//throw new Exception("Error al cagar al archivo", e);
+		}
         
 	}
 
