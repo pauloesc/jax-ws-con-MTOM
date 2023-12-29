@@ -15,23 +15,10 @@ import javax.xml.ws.Action;
  * Generated source version: 2.2
  * 
  */
-@WebService(name = "Brasil", targetNamespace = "http://mio/")
+@WebService(name = "Uruguay", targetNamespace = "http://mio/")
 @SOAPBinding(style = SOAPBinding.Style.RPC)
-public interface Brasil {
+public interface Uruguay {
 
-
-    /**
-     * 
-     * @param nombreDeLaVariableQueApareceEnWsdl
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(partName = "return")
-    @Action(input = "http://mio/Brasil/rioRequest", output = "http://mio/Brasil/rioResponse")
-    public String rio(
-        @WebParam(name = "Nombre_de_la_variable_que_aparece_en_wsdl", partName = "Nombre_de_la_variable_que_aparece_en_wsdl")
-        String nombreDeLaVariableQueApareceEnWsdl);
 
     /**
      * 
@@ -39,10 +26,23 @@ public interface Brasil {
      * @return
      *     returns java.lang.String
      */
-    @WebMethod(operationName = "san_pablo")
+    @WebMethod
     @WebResult(partName = "return")
-    @Action(input = "http://mio/Brasil/san_pabloRequest", output = "http://mio/Brasil/san_pabloResponse")
-    public String sanPablo(
+    @Action(input = "http://mio/Uruguay/montevideoRequest", output = "http://mio/Uruguay/montevideoResponse")
+    public String montevideo(
+        @WebParam(name = "arg0", partName = "arg0")
+        String arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://mio/Uruguay/canelonesRequest", output = "http://mio/Uruguay/canelonesResponse")
+    public String canelones(
         @WebParam(name = "arg0", partName = "arg0")
         String arg0);
 

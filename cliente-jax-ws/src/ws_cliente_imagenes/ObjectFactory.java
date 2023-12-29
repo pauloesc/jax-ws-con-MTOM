@@ -24,19 +24,27 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _ErrorCargaArchivo_QNAME = new QName("http://imagenes/", "ErrorCargaArchivo");
     private final static QName _DescargarImg_QNAME = new QName("http://imagenes/", "descargarImg");
     private final static QName _DescargarImgResponse_QNAME = new QName("http://imagenes/", "descargarImgResponse");
-    private final static QName _ErrorCargaArchivo_QNAME = new QName("http://imagenes/", "ErrorCargaArchivo");
     private final static QName _SubirImg_QNAME = new QName("http://imagenes/", "subirImg");
     private final static QName _SubirImgResponse_QNAME = new QName("http://imagenes/", "subirImgResponse");
-    private final static QName _DescargarImgResponseReturn_QNAME = new QName("", "return");
     private final static QName _SubirImgArg1_QNAME = new QName("", "arg1");
+    private final static QName _DescargarImgResponseReturn_QNAME = new QName("", "return");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: ws_cliente_imagenes
      * 
      */
     public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link ErrorCargaArchivo }
+     * 
+     */
+    public ErrorCargaArchivo createErrorCargaArchivo() {
+        return new ErrorCargaArchivo();
     }
 
     /**
@@ -56,14 +64,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ErrorCargaArchivo }
-     * 
-     */
-    public ErrorCargaArchivo createErrorCargaArchivo() {
-        return new ErrorCargaArchivo();
-    }
-
-    /**
      * Create an instance of {@link SubirImg }
      * 
      */
@@ -80,26 +80,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link DescargarImg }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ErrorCargaArchivo }{@code >}
      * 
-     */
-    @XmlElementDecl(namespace = "http://imagenes/", name = "descargarImg")
-    public JAXBElement<DescargarImg> createDescargarImg(DescargarImg value) {
-        return new JAXBElement<DescargarImg>(_DescargarImg_QNAME, DescargarImg.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link DescargarImgResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://imagenes/", name = "descargarImgResponse")
-    public JAXBElement<DescargarImgResponse> createDescargarImgResponse(DescargarImgResponse value) {
-        return new JAXBElement<DescargarImgResponse>(_DescargarImgResponse_QNAME, DescargarImgResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ErrorCargaArchivo }{@code >}}
-     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link ErrorCargaArchivo }{@code >}
      */
     @XmlElementDecl(namespace = "http://imagenes/", name = "ErrorCargaArchivo")
     public JAXBElement<ErrorCargaArchivo> createErrorCargaArchivo(ErrorCargaArchivo value) {
@@ -107,8 +93,38 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SubirImg }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link DescargarImg }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link DescargarImg }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://imagenes/", name = "descargarImg")
+    public JAXBElement<DescargarImg> createDescargarImg(DescargarImg value) {
+        return new JAXBElement<DescargarImg>(_DescargarImg_QNAME, DescargarImg.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link DescargarImgResponse }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link DescargarImgResponse }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://imagenes/", name = "descargarImgResponse")
+    public JAXBElement<DescargarImgResponse> createDescargarImgResponse(DescargarImgResponse value) {
+        return new JAXBElement<DescargarImgResponse>(_DescargarImgResponse_QNAME, DescargarImgResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SubirImg }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SubirImg }{@code >}
      */
     @XmlElementDecl(namespace = "http://imagenes/", name = "subirImg")
     public JAXBElement<SubirImg> createSubirImg(SubirImg value) {
@@ -116,8 +132,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SubirImgResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SubirImgResponse }{@code >}
      * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SubirImgResponse }{@code >}
      */
     @XmlElementDecl(namespace = "http://imagenes/", name = "subirImgResponse")
     public JAXBElement<SubirImgResponse> createSubirImgResponse(SubirImgResponse value) {
@@ -125,21 +145,29 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}
      * 
-     */
-    @XmlElementDecl(namespace = "", name = "return", scope = DescargarImgResponse.class)
-    public JAXBElement<byte[]> createDescargarImgResponseReturn(byte[] value) {
-        return new JAXBElement<byte[]>(_DescargarImgResponseReturn_QNAME, byte[].class, DescargarImgResponse.class, ((byte[]) value));
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
-     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}
      */
     @XmlElementDecl(namespace = "", name = "arg1", scope = SubirImg.class)
     public JAXBElement<byte[]> createSubirImgArg1(byte[] value) {
         return new JAXBElement<byte[]>(_SubirImgArg1_QNAME, byte[].class, SubirImg.class, ((byte[]) value));
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}
+     */
+    @XmlElementDecl(namespace = "", name = "return", scope = DescargarImgResponse.class)
+    public JAXBElement<byte[]> createDescargarImgResponseReturn(byte[] value) {
+        return new JAXBElement<byte[]>(_DescargarImgResponseReturn_QNAME, byte[].class, DescargarImgResponse.class, ((byte[]) value));
     }
 
 }

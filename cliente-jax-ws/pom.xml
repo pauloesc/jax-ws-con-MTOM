@@ -43,6 +43,82 @@
                 </archive>
             </configuration>
         </plugin>
+        
+        
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxws-maven-plugin</artifactId> 
+                <version>2.6</version>
+                
+                <executions>
+					
+                    <execution>
+						<id>wsimport-img1</id>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlUrls>
+                                <wsdlUrl>http://localhost:8080/servidor/latam/uruguay?wsdl</wsdlUrl>
+                            </wsdlUrls>
+                            <packageName>latam</packageName>
+                            <sourceDestDir>src</sourceDestDir>
+                        </configuration>
+                    </execution>
+                    
+                    <execution>
+						<id>wsimport-img2</id>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlUrls>
+                                <wsdlUrl>http://localhost:8080/servidor/latam/brasil?wsdl</wsdlUrl>
+                            </wsdlUrls>
+                            <packageName>latam</packageName>
+                            <sourceDestDir>src</sourceDestDir>
+                        </configuration>
+                    </execution>
+                    
+                    <execution>
+						<id>wsimport-img3</id>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlUrls>
+                                <wsdlUrl>http://localhost:8080/servidor/europa/francia?wsdl</wsdlUrl>
+                            </wsdlUrls>
+                            <packageName>francia</packageName>
+                            <sourceDestDir>src</sourceDestDir>
+                        </configuration>
+                    </execution>
+                    
+                    <execution>
+						<id>wsimport-img4</id>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlUrls>
+                                <wsdlUrl>http://localhost:8080/servidor/img?wsdl</wsdlUrl>
+                            </wsdlUrls>
+                            <packageName>ws_cliente_imagenes</packageName>
+                            <sourceDestDir>src</sourceDestDir>
+                        </configuration>
+                    </execution>
+                    
+                </executions>
+                
+                <dependencies>
+                    <dependency>
+                        <groupId>com.sun.xml.ws</groupId>
+                        <artifactId>jaxws-tools</artifactId>
+                        <version>2.3.5</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+      
       
     </plugins>
   </build>
