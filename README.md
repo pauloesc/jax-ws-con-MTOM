@@ -8,3 +8,5 @@ AAdemas tambien combiene ejecutar el script generarEstructuraDeCarpetas.sh para 
 Se uso openjdk-8 y el codigo se compilo bajo el estandar 8 del lenguaje java.
 
 Para probar si los servicios se levantaron entrar a http://localhost:8080/servidor/img
+
+Si el servidor Y LOS SERVICIOS-WEB no esta expuestos (levantados) "mvn clean generate-sources compile package" no va a funcionar en el cliente-jax-ws, ya que necesita de los wsdl para generar las clases.
